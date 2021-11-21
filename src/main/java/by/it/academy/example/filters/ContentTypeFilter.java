@@ -18,8 +18,9 @@ public class ContentTypeFilter extends HttpFilter {
         String contentType = req.getContentType();
         if (ALLOWED_CONTENT_TYPE.equals(contentType)) {
             chain.doFilter(req, res);
-        } else {
             res.getWriter().write("Text plain only");
+        } else {
+            chain.doFilter(req, res);
         }
     }
 }

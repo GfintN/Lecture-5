@@ -22,9 +22,10 @@ public class IPFilter extends HttpFilter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         if (BLOCKED_IP.contains(ipAddress.GetIP())) {
-            chain.doFilter(req, res);
-        } else {
             res.getWriter().write("Your IP BLOCKED");
+        } else {
+
+            chain.doFilter(req, res);
         }
     }
 }

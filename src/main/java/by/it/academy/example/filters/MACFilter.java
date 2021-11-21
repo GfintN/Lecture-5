@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
-@WebFilter(urlPatterns = "/setNumbers")
+@WebFilter(urlPatterns = "/setNumber")
 public class MACFilter extends HttpFilter {
     private final List<String> BLOCKED_MAC = List.of("00-01-02-03-04-05-AA", "00-01-02-03-04-05-AB",
             "00-01-02-03-04-05-AC");
@@ -21,9 +21,10 @@ public class MACFilter extends HttpFilter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
        if(BLOCKED_MAC.contains(macAddress.GetMAC())){
-           chain.doFilter(req,res);
-       }else {
            res.getWriter().write("Your MAC BLOCKED");
+
+       }else {
+           chain.doFilter(req,res);
        }
     }
 }
