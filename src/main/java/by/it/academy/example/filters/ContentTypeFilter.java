@@ -9,7 +9,7 @@ import javax.servlet.http.HttpFilter;
 import java.io.IOException;
 import java.util.List;
 
-@WebFilter(urlPatterns = "/servlet-1")
+@WebFilter(urlPatterns = "/setName")
 public class ContentTypeFilter extends HttpFilter {
     private static final String ALLOWED_CONTENT_TYPE = "text/plain";
 
