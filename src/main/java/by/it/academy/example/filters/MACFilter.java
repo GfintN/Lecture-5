@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
-@WebFilter(urlPatterns = "/setNumbers")
+@WebFilter(urlPatterns = "/sumNumbers")
 public class MACFilter extends HttpFilter {
     private final List<String> BLOCKED_MAC = List.of("00-01-02-03-04-05-AA", "00-01-02-03-04-05-AB",
             "00-01-02-03-04-05-AC");
